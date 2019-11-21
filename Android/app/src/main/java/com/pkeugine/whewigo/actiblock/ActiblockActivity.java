@@ -164,9 +164,9 @@ public class ActiblockActivity extends BaseActivity {
         SimpleDateFormat format1 = new SimpleDateFormat( "yyyyMMdd");
         Date time = new Date();
         String date = format1.format(time);
+        Log.d("date",date);
 
-
-        Call<JsonObject> call = retrofitExService.getTourData(TourapiKey,"AND","Whewigo",100,'B',1, "20191003","20191003","json");
+        Call<JsonObject> call = retrofitExService.getTourData(TourapiKey,"AND","Whewigo",100,'B',1, date,date,"json");
         Log.d("tag", "getPOI: "+call.request().toString());
         call.enqueue(new Callback<JsonObject>() {
             @Override
